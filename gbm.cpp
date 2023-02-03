@@ -14,7 +14,7 @@ double GBM::simulate() {
 std::vector<double> GBM::generate_prices(unsigned int n) {
     std::vector<double> prices(n);
 
-    #pragma omp parallel for
+#pragma omp parallel for num_threads(8)
     for (int i = 0; i < n; i++) {
         prices[i] = simulate();
     }

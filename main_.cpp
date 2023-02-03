@@ -1,6 +1,9 @@
 #include "gbm.hpp"
 #include "logistic_regression.hpp"
 #include "pl.hpp"
+#include <algorithm>
+#include <numeric>
+#include <omp.h>
 
 
 int main() {
@@ -8,8 +11,7 @@ int main() {
     // N.B. GBM parameters should be market observed estimates
     GBM gbm(0.1, 0.2, 100, 1, 42);
 
-    // We assume 4 years of trading days, 220 each
-    std::vector<double> prices = gbm.generate_prices(880);
+    std::vector<double> prices = gbm.generate_prices(100000);
     unsigned int n = prices.size();
     std::cout << "Number of trading days: " << n << std::endl;
 

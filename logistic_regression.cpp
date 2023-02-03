@@ -1,11 +1,14 @@
 #include "logistic_regression.hpp"
+#include <algorithm>
+#include <numeric>
+#include <cmath>
 
 
 LogisticRegression :: LogisticRegression(int num_features, int num_iterations, double learning_rate)
             : num_features(num_features), num_iterations(num_iterations), learning_rate(learning_rate) {}
 
-     double ogisticRegression ::sigmoid(double x) {
-        return 1.0 / (1.0 + exp(-x));
+     double LogisticRegression ::sigmoid(double x) {
+        return 1.0 / (1.0 + std::exp(-x));
     }
 
     std::vector<double> LogisticRegression ::gradient(const std::vector<std::vector<double>>& X, const std::vector<double>& y, const std::vector<double>& weights) {
@@ -20,7 +23,7 @@ LogisticRegression :: LogisticRegression(int num_features, int num_iterations, d
         return gradient;
     }
 
-    std::vector<double> LogisticRegression ::it(const std::vector<std::vector<double>>& X, const std::vector<double>& y) {
+    std::vector<double> LogisticRegression ::fit(const std::vector<std::vector<double>>& X, const std::vector<double>& y) {
         std::vector<double> weights(num_features, 0.0);
         for (int t = 0; t < num_iterations; t++) {
             auto grad = gradient(X, y, weights);

@@ -1,4 +1,6 @@
 #include "pl.hpp"
+#include "logistic_regression.hpp"
+#include <numeric>
 
 PL::PL(const std::vector<std::vector<double>>& X, const std::vector<double>& weights, double initial_sum)
         : X_(X), weights_(weights), initial_sum_(initial_sum) {}
