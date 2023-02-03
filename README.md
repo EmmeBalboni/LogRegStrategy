@@ -3,7 +3,7 @@
 LogRegStrategy is an ML-based trading strategy for the equity space.
 
 The problem is formulated as a classification.
-First a Geometric Brownian Motion (GBM) is created in order to simulate a vector of stock prices. Time span is 4 years (each with 220 trading days). 
+First a Geometric Brownian Motion (GBM) is created in order to simulate a vector of stock prices. Time span is artificial (could be infraday).
 Then a set of financial indicators, namely:
 
 1. Moving Average (MA)
