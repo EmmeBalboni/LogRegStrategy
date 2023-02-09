@@ -9,6 +9,9 @@ The problem is formulated as a classification.
 
 Our software's task is learning how to optimally trade in a complex non-stationary environment as the Equity market, in order to maximize profit. This is done employing a Logistic Regression based on a group of financial indicators as predictors for the price to go up or down.
 
+
+## Strategy
+
 First a class for a Geometric Brownian Motion (GBM) is created in order to simulate a vector of stock prices. 
 Time span is artificial (could be infraday).
 
@@ -24,6 +27,7 @@ which is employed as predictors to a Logistic Regression model. Target variable 
 These technical indicators are computed and grouped together in the training/test dataset in the main function.
 
 The learning and prediction phase of the Logistic Regression are implemented from scratch in C++ in the class Logistic Regression
+
 
 ## Performance
 
